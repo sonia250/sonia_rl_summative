@@ -1,0 +1,14 @@
+[project]
+name = "student_name_rl_summative"
+version = "0.1.0"
+description = "Court Motion Triage - mission-based RL (DQN, REINFORCE, PPO, A2C)"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "gymnasium>=1.0",
+    "pygame>=2.5",
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+    "torch>=2.2",
+    "torchrl>=0.6",
+    "tensordict>=0.6",
+]
