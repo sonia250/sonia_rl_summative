@@ -1,5 +1,5 @@
 [project]
-name = "student_name_rl_summative"
+name = "sonia_name_rl_summative"
 version = "0.1.0"
 description = "Court Motion Triage - mission-based RL (DQN, REINFORCE, PPO, A2C)"
 requires-python = ">=3.10,<3.13"

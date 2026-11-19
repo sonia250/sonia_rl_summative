@@ -1362,7 +1362,7 @@ wheels = [
 ]
 
 [[package]]
-name = "student-name-rl-summative"
+name = "sonia-name-rl-summative"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
