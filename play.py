@@ -50,6 +50,18 @@ def choose_action(net, obs, is_dqn, env, greedy):
     return int(Categorical(logits=logits).sample())
 
 
+def wait_for_close():
+    """Keep the window responsive until a key is pressed or the window is closed."""
+    import pygame
+    print("\nSimulation finished. Press any key in the window (or close it) to exit.")
+    clock = pygame.time.Clock()
+    while True:
+        for event in pygame.event.get():
+            if event.type in (pygame.QUIT, pygame.KEYDOWN):
+                return
+        clock.tick(30)
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--algo", choices=["dqn", "reinforce", "ppo", "a2c"], default="ppo")
@@ -86,7 +98,7 @@ def main():
               f"invalid actions: {info['invalid_actions']}")
 
     if not args.no_wait:
-        input("\nPress Enter to close the window...")
+        wait_for_close()
     env.close()
 
 
