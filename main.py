@@ -1,12 +1,9 @@
-"""Demo: random agent in the Court Motion Triage environment (GUI)."""
-from environment.custom_env import CourtMotionEnv
+"""Entry point: `uv sync` then `uv run main.py`.
+
+Runs the best trained agent (PPO) in the Court Motion Triage environment with the
+GUI and terminal output. See play.py for options (other algorithms, speed, seeds).
+"""
+from play import main
 
 if __name__ == "__main__":
-    env = CourtMotionEnv(render_mode="human")
-    obs, info = env.reset(seed=0)
-    done = False
-    while not done:
-        obs, reward, terminated, truncated, info = env.step(env.action_space.sample())
-        print(f"day={info['day']:>2} backlog={info['backlog']:>2} reward={reward:+.1f}")
-        done = terminated or truncated
-    env.close()
+    main()
