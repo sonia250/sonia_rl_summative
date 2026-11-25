@@ -9,7 +9,6 @@ trained with **TorchRL** on the same environment and compared:
 | Value-based | DQN |
 | Policy gradient | REINFORCE, PPO, A2C |
 
-Video demo: _add link here_
 
 ## The environment (`environment/custom_env.py`)
 
@@ -18,7 +17,7 @@ Video demo: _add link here_
   documents complete; plus backlog size, hours left today, days left, overdue count.
 - **Actions (8, discrete):** hear the motion in slot 0-4, fast-track the oldest procedural motion
   (half an hour, 15% risk of appeal), send back the oldest incomplete motion (fixed after 2 days), end the day.
-- **Rewards:** +1.0 / +1.5 / +2.5 for resolving a procedural / interlocutory / substantive motion,
+- **Rewards:** +1.0 / +1.5 / +2.0 for resolving a procedural / interlocutory / substantive motion,
   +2 extra if urgent, +0.2 for sending back an incomplete motion, -0.1 per waiting motion per day,
   -3 when a motion passes its deadline, -0.5 for an invalid action, +10 for clearing the backlog.
 - **Terminal conditions:** day 60 reached, or the backlog is empty.
